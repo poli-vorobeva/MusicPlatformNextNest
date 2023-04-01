@@ -1,21 +1,25 @@
 import { Get, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Track, TrackDocument } from './schemas/track.schema';
-import { Model, Schema } from 'mongoose';
+import * as mongoose from 'mongoose';
+import { Model } from 'mongoose';
 import { Comment, CommentDocument } from './schemas/comments.schema';
 import { CreateTrackDTO } from './dto/create-track.dto';
 
 import { CreateCommentDto } from './dto/create-comment.dto';
-import * as mongoose from 'mongoose';
+import { FileService, FileType } from '../file.service';
 
 @Injectable()
 export class TrackService {
   constructor(@InjectModel(Track.name) private trackModel: Model<TrackDocument>,
-              @InjectModel(Comment.name) private commentModel: Model<CommentDocument>) {
+              @InjectModel(Comment.name) private commentModel: Model<CommentDocument>,
+              private fileService:FileService) {
   }
 
-  async create(dto: CreateTrackDTO): Promise<Track> {
-    return await this.trackModel.create({ ...dto, listen: 0 });
+  async create(dto: CreateTrackDTO,picture,audio): Promise<Track> {
+    const audioPath= this.fileService.createFile(FileType.AUDIO,audio)
+    const picturePath=this.fileService.createFile(FileType.IMAGE,picture)
+    return await this.trackModel.create({ ...dto, listen: 0, audio:audioPath,picture:picturePath});
   }
 
   @Get()

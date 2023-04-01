@@ -1,4 +1,4 @@
-import { Get, Injectable } from '@nestjs/common';
+import { Get, Injectable, Post } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Track, TrackDocument } from './schemas/track.schema';
 import * as mongoose from 'mongoose';
@@ -13,18 +13,17 @@ import { FileService, FileType } from '../file.service';
 export class TrackService {
   constructor(@InjectModel(Track.name) private trackModel: Model<TrackDocument>,
               @InjectModel(Comment.name) private commentModel: Model<CommentDocument>,
-              private fileService:FileService) {
+              private fileService: FileService) {
   }
 
-  async create(dto: CreateTrackDTO,picture,audio): Promise<Track> {
-    const audioPath= this.fileService.createFile(FileType.AUDIO,audio)
-    const picturePath=this.fileService.createFile(FileType.IMAGE,picture)
-    return await this.trackModel.create({ ...dto, listen: 0, audio:audioPath,picture:picturePath});
+  async create(dto: CreateTrackDTO, picture, audio): Promise<Track> {
+    const audioPath = this.fileService.createFile(FileType.AUDIO, audio);
+    const picturePath = this.fileService.createFile(FileType.IMAGE, picture);
+    return await this.trackModel.create({ ...dto, listens: 0, audio: audioPath, picture: picturePath });
   }
 
-  @Get()
-  async getAll(): Promise<Track[]> {
-    return this.trackModel.find();
+  async getAll(count: number, offset: number): Promise<Track[]> {
+    return this.trackModel.find().skip(offset).limit(count);
     //delete await
   }
 
@@ -47,5 +46,20 @@ export class TrackService {
     track.comments.push(comment._id);
     await track.save();
     return comment;
+  }
+
+  async listen(id: mongoose.Schema.Types.ObjectId) {
+    const track = await this.trackModel.findById(id);
+    track.listens += 1;
+    await track.save();
+  }
+
+  async search(query: string) {
+    const tracks = await this.trackModel.find({
+      name: {
+        $regexp: new RegExp(query,'i'),
+      }
+    })
+    return tracks
   }
 }

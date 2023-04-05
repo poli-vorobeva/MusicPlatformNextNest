@@ -13,7 +13,7 @@ const TrackItem:React.FC<TrackItemProps> = ({track,active=false}) => {
  const router = useRouter()
   return (
     <Card className={styles.track} onClick={()=>router.push('/tracks/'+track._id)}>
-      <IconButton>
+      <IconButton onClick={(e)=>e.stopPropagation()}>
         {
           active?<Pause/>:<PlayArrow/>
         }
@@ -24,7 +24,7 @@ const TrackItem:React.FC<TrackItemProps> = ({track,active=false}) => {
         <div style={{fontSize:12,color:'gray'}}>{track.artist}</div>
       </Grid>
       {active&& <div>02:42 / 03:22 </div>}
-      <IconButton style={{marginLeft:"auto"}}>
+      <IconButton onClick={(e)=>e.stopPropagation()} style={{marginLeft:"auto"}}>
         <Delete/>
       </IconButton>
     </Card>

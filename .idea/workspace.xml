@@ -11,43 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43eaa90f-e505-406d-9cbb-31ac4aa40d03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/components/FileUpload.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/Player.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/StepWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/TrackProgress.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/styles/Player.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/TrackItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/TrackItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/layouts/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/layouts/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/tracks/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/tracks/[id].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/tracks/create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/tracks/create.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nest-cli.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/file.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/track/dto/create-comment.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/track/dto/create-track.dto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/track/schemas/comments.schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/track/schemas/track.schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/track/track.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/track/track.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/track/track.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/audio/48e0c605-f671-4328-b500-17f394d5ae8a.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/audio/90b8ec9a-3425-4c1f-809e-afe1bd843d27.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/audio/98ef5c5d-28aa-4073-94cb-e25539113a8b.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/audio/f12cc3e8-3790-4cdb-ad13-d43c180a465e.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/204e6ab2-285f-4528-80ea-a25542ba31b0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/59b02a49-e94e-4b4d-b112-c06bf3dd469b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/ae8147e5-2e80-433d-ae40-152875db9d12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/b9a400d4-b8d6-49f8-b780-3f243b050f11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.build.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/_app.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/store/reducers/playerReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/store/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/types/player.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +104,10 @@
       <workItem from="1680435742066" duration="817000" />
       <workItem from="1680436584122" duration="594000" />
       <workItem from="1680601740989" duration="5163000" />
-      <workItem from="1680704419051" duration="2739000" />
+      <workItem from="1680704419051" duration="4510000" />
+      <workItem from="1680761101105" duration="9000" />
+      <workItem from="1680763887317" duration="1906000" />
+      <workItem from="1680765861423" duration="2518000" />
     </task>
     <servers />
   </component>
@@ -185,21 +159,21 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="360" y="116" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1680619675757" />
-    <state width="858" height="81" key="GridCell.Tab.0.bottom" timestamp="1680619678954">
+    <state width="827" height="266" key="GridCell.Tab.0.bottom" timestamp="1680768214629">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="858" height="81" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1680619678954" />
-    <state width="858" height="81" key="GridCell.Tab.0.center" timestamp="1680619678954">
+    <state width="827" height="266" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1680768214629" />
+    <state width="827" height="266" key="GridCell.Tab.0.center" timestamp="1680768214629">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="858" height="81" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1680619678954" />
-    <state width="858" height="81" key="GridCell.Tab.0.left" timestamp="1680619678954">
+    <state width="827" height="266" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1680768214629" />
+    <state width="827" height="266" key="GridCell.Tab.0.left" timestamp="1680768214629">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="858" height="81" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1680619678954" />
-    <state width="858" height="81" key="GridCell.Tab.0.right" timestamp="1680619678954">
+    <state width="827" height="266" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1680768214629" />
+    <state width="827" height="266" key="GridCell.Tab.0.right" timestamp="1680768214629">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="858" height="81" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1680619678954" />
+    <state width="827" height="266" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1680768214629" />
   </component>
 </project>
